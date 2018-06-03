@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="480.0" prefWidth="768.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mrvansork.nnt.view.TrainOverviewController">
+   <children>
+      <Label layoutX="24.0" layoutY="24.0" prefHeight="41.0" prefWidth="118.0" text="Trainer" textFill="#00b4ff">
+         <font>
+            <Font name="Consolas Bold Italic" size="27.0" />
+         </font>
+      </Label>
+      <Label layoutX="24.0" layoutY="97.0" text="Alpha" />
+      <Label layoutX="24.0" layoutY="136.0" text="Max. Error" />
+      <Label layoutX="24.0" layoutY="176.0" text="Max. Iterations" />
+      <TextField fx:id="alpha" layoutX="118.0" layoutY="93.0" prefHeight="25.0" prefWidth="61.0" promptText="0.5" text="0.5" />
+      <TextField fx:id="error" layoutX="118.0" layoutY="132.0" prefHeight="25.0" prefWidth="61.0" promptText="0.001" text="0.001" />
+      <TextField fx:id="iterations" layoutX="118.0" layoutY="172.0" prefHeight="25.0" prefWidth="61.0" promptText="50000" text="50000" />
+      <ProgressIndicator fx:id="indicator" layoutX="333.0" layoutY="47.0" progress="0.0" stylesheets="@styles/progress.css" />
+      <Label fx:id="RTError" layoutX="188.0" layoutY="14.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="28.0" prefWidth="145.0" text="0.0" textFill="#ab0000">
+         <font>
+            <Font name="Consolas Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="DError" layoutX="358.0" layoutY="14.0" prefHeight="28.0" prefWidth="145.0" text="0.0" textFill="#106829">
+         <font>
+            <Font name="Consolas Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="339.0" layoutY="14.0" text="/">
+         <font>
+            <Font name="Consolas Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="11.0" layoutY="240.0" text="General Log" />
+      <TextArea fx:id="general_log" editable="false" layoutX="11.0" layoutY="257.0" prefHeight="149.0" prefWidth="214.0" />
+      <Button fx:id="back" layoutX="27.0" layoutY="435.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="102.0" styleClass="login" stylesheets="@styles/buttons.css" text="Atras">
+         <font>
+            <Font name="Consolas Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="save" layoutX="629.0" layoutY="434.0" mnemonicParsing="false" onAction="#onSave" prefHeight="31.0" prefWidth="125.0" styleClass="login" stylesheets="@styles/buttons.css" text="Guardar como...">
+         <font>
+            <Font name="Consolas Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="start" layoutX="110.0" layoutY="212.0" mnemonicParsing="false" onAction="#onStart" prefHeight="28.0" prefWidth="78.0" styleClass="login" stylesheets="@styles/buttons.css" text="Iniciar">
+         <font>
+            <Font name="Consolas Bold" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

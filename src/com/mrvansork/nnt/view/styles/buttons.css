@@ -1,0 +1,31 @@
+.login{
+	-fx-border-color: #00b4ff;
+	-fx-border-width: 3;
+	-fx-background-color: #EEEEEE;
+}
+
+.login:hover{
+	-fx-border-color: #00b4ff;
+    -fx-border-width: 5;
+    -fx-background-color: #DDDDDD;
+}
+
+
+.login:pressed{
+	-fx-background-color: #999999;
+}
+
+.close{
+    -fx-border-color: #036a90;
+    -fx-border-width: 1;
+    -fx-background-color: #EEEEEE;
+}
+
+.close:hover{
+	-fx-border-color: #00b4ff;
+    -fx-background-color: #DDDDDD;
+}
+
+.close:pressed{
+	-fx-background-color: #999999;
+}

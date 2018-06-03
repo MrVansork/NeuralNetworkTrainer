@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.web.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.canvas.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="480.0" prefWidth="768.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mrvansork.nnt.view.TrainMenuOverviewController">
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" prefHeight="41.0" prefWidth="118.0" text="Trainer" textFill="#00b4ff">
+         <font>
+            <Font name="Consolas Bold Italic" size="27.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="83.0" text="Nombre" />
+      <TextField layoutX="85.0" layoutY="79.0" prefHeight="25.0" prefWidth="219.0" />
+      <Label layoutX="14.0" layoutY="122.0" text="Descripción" />
+      <TextArea layoutX="85.0" layoutY="122.0" prefHeight="74.0" prefWidth="219.0" />
+      <Label layoutX="14.0" layoutY="211.0" prefHeight="17.0" prefWidth="44.0" text="Datos" />
+      <Button layoutX="85.0" layoutY="207.0" mnemonicParsing="false" onAction="#onExplore" prefHeight="27.0" prefWidth="95.0" styleClass="login" stylesheets="@styles/buttons.css" text="Examinar...">
+         <font>
+            <Font name="Consolas Bold" size="11.0" />
+         </font></Button>
+      <TextArea fx:id="preview" editable="false" focusTraversable="false" layoutX="14.0" layoutY="268.0" prefHeight="141.0" prefWidth="314.0">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor></TextArea>
+      <Label layoutX="14.0" layoutY="240.0" text="Vista previa" />
+      <Label layoutX="355.0" layoutY="26.0" text="Entradas" />
+      <TextField fx:id="inputCount" layoutX="411.0" layoutY="22.0" prefHeight="25.0" prefWidth="32.0" text="1" />
+      <TextField fx:id="inputMin" layoutX="541.0" layoutY="22.0" prefHeight="25.0" prefWidth="46.0" text="0.8" />
+      <TextField fx:id="inputMax" layoutX="651.0" layoutY="22.0" prefHeight="25.0" prefWidth="46.0" text="4.1" />
+      <TextField fx:id="outputCount" layoutX="410.0" layoutY="75.0" prefHeight="25.0" prefWidth="32.0" text="1" />
+      <TextField fx:id="outputMax" layoutX="650.0" layoutY="75.0" prefHeight="25.0" prefWidth="46.0" text="200" />
+      <TextField fx:id="outputMin" layoutX="540.0" layoutY="75.0" prefHeight="25.0" prefWidth="46.0" text="58" />
+      <Label layoutX="354.0" layoutY="79.0" text="Salidas" />
+      <Label layoutX="493.0" layoutY="26.0" text="Mínimo" />
+      <Label layoutX="603.0" layoutY="26.0" text="Máximo" />
+      <Label layoutX="602.0" layoutY="79.0" text="Máximo" />
+      
+      <Label layoutX="492.0" layoutY="79.0" text="Mínimo" />
+      <Button fx:id="next" layoutX="641.0" layoutY="423.0" mnemonicParsing="false" onAction="#onNext" prefHeight="31.0" prefWidth="102.0" styleClass="login" stylesheets="@styles/buttons.css" text="Siguiente">
+         <font>
+            <Font name="Consolas Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="main_menu" layoutX="22.0" layoutY="423.0" mnemonicParsing="false" styleClass="login" stylesheets="@styles/buttons.css" text="Menu principal">
+         <font>
+            <Font name="Consolas Bold" size="12.0" />
+         </font>
+      </Button>
+      <Label fx:id="file_name" layoutX="85.0" layoutY="240.0" prefHeight="17.0" prefWidth="243.0" textFill="#5180a1">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

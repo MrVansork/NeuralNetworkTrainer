@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="480.0" prefWidth="768.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mrvansork.nnt.view.OpenMenuOverviewController">
+   <children>
+      <Label layoutX="34.0" layoutY="34.0" prefHeight="41.0" prefWidth="118.0" text="Loader" textFill="#00b4ff">
+         <font>
+            <Font name="Consolas Bold Italic" size="27.0" />
+         </font>
+      </Label>
+      <Button fx:id="main_menu" layoutX="32.0" layoutY="433.0" mnemonicParsing="false" styleClass="login" stylesheets="@styles/buttons.css" text="Menu principal">
+         <font>
+            <Font name="Consolas Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="95.0" layoutY="217.0" mnemonicParsing="false" onAction="#onExplore" prefHeight="27.0" prefWidth="95.0" styleClass="login" stylesheets="@styles/buttons.css" text="Examinar...">
+         <font>
+            <Font name="Consolas Bold" size="11.0" />
+         </font>
+      </Button>
+      <Label layoutX="24.0" layoutY="221.0" prefHeight="17.0" prefWidth="62.0" text="Perceptron" />
+      <TextArea layoutX="95.0" layoutY="132.0" prefHeight="74.0" prefWidth="219.0" />
+      <Label layoutX="24.0" layoutY="132.0" text="Descripción" />
+      <TextField layoutX="95.0" layoutY="89.0" prefHeight="25.0" prefWidth="219.0" />
+      <Label layoutX="24.0" layoutY="93.0" text="Nombre" />
+      <ScrollPane layoutX="344.0" layoutY="32.0" prefHeight="363.0" prefWidth="200.0">
+         <content>
+            <VBox fx:id="inputs" prefHeight="359.0" prefWidth="183.0" />
+         </content>
+      </ScrollPane>
+      <ScrollPane layoutX="551.0" layoutY="32.0" prefHeight="363.0" prefWidth="200.0">
+         <content>
+            <VBox fx:id="outputs" prefHeight="359.0" prefWidth="183.0" />
+         </content>
+      </ScrollPane>
+      <Label layoutX="424.0" layoutY="14.0" text="Entrada" />
+      <Label layoutX="635.0" layoutY="14.0" text="Salida" />
+      <Button fx:id="check" layoutX="126.0" layoutY="293.0" mnemonicParsing="false" onAction="#onCheck" prefHeight="54.0" prefWidth="157.0" styleClass="login" stylesheets="@styles/buttons.css" text="Check">
+         <font>
+            <Font name="Consolas Bold" size="11.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="480.0" prefWidth="768.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mrvansork.nnt.view.MenuOverviewController">
+   <children>
+      <Label alignment="CENTER" layoutX="29.0" layoutY="33.0" prefHeight="39.0" prefWidth="441.0" text="Neural Network Trainer" textFill="#00b4ff">
+         <font>
+            <Font name="Consolas Bold" size="33.0" />
+         </font>
+      </Label>
+      <Button layoutX="58.0" layoutY="188.0" mnemonicParsing="false" onAction="#onTrain" prefHeight="52.0" prefWidth="212.0" styleClass="login" stylesheets="@styles/buttons.css" text="Train new" textFill="#00b4ff">
+         <font>
+            <Font name="Consolas Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="58.0" layoutY="272.0" mnemonicParsing="false" onAction="#onOpen" prefHeight="52.0" prefWidth="212.0" styleClass="login" stylesheets="@styles/buttons.css" text="Open existent" textFill="#00b4ff">
+         <font>
+            <Font name="Consolas Bold" size="18.0" />
+         </font>
+      </Button>
+      <Label layoutX="566.0" layoutY="78.0" text="Historial" textFill="#00b4ff">
+         <font>
+            <Font name="Consolas Bold" size="16.0" />
+         </font>
+      </Label>
+      <ScrollPane hbarPolicy="NEVER" layoutX="451.0" layoutY="104.0" prefHeight="360.0" prefWidth="309.0" style="-fx-border-color: #00b4ff; -fx-border-width: 3;" vbarPolicy="ALWAYS">
+         <content>
+            <VBox fx:id="history" prefHeight="342.0" prefWidth="284.0" />
+         </content>
+      </ScrollPane>
+      <Button layoutX="58.0" layoutY="353.0" mnemonicParsing="false" onAction="#onImport" prefHeight="52.0" prefWidth="212.0" styleClass="login" stylesheets="@styles/buttons.css" text="Import perceptron" textFill="#00b4ff">
+         <font>
+            <Font name="Consolas Bold" size="18.0" />
+         </font>
+      </Button>
+      <Pane fx:id="import_pane" disable="true" layoutX="29.0" layoutY="161.0" prefHeight="261.0" prefWidth="329.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #00b4ff; -fx-border-width: 2;" visible="false">
+         <children>
+            <Label layoutX="11.0" layoutY="2.0" prefHeight="25.0" prefWidth="318.0" text="Importar perceptron" textFill="#00b4ff">
+               <font>
+                  <Font name="Consolas Bold" size="13.0" />
+               </font>
+            </Label>
+            <Button layoutX="14.0" layoutY="220.0" mnemonicParsing="false" onAction="#onDoImport" prefHeight="25.0" prefWidth="112.0" styleClass="login" stylesheets="@styles/buttons.css" text="Importar" textFill="#00b4ff">
+               <font>
+                  <Font name="Consolas Bold" size="11.0" />
+               </font>
+            </Button>
+            <Button layoutX="202.0" layoutY="220.0" mnemonicParsing="false" onAction="#onCancelImport" prefHeight="25.0" prefWidth="112.0" styleClass="login" stylesheets="@styles/buttons.css" text="Cancelar" textFill="#00b4ff">
+               <font>
+                  <Font name="Consolas Bold" size="11.0" />
+               </font>
+            </Button>
+            <Button layoutX="10.0" layoutY="36.0" mnemonicParsing="false" onAction="#onExplore" prefHeight="27.0" prefWidth="95.0" styleClass="login" stylesheets="@styles/buttons.css" text="Examinar...">
+               <font>
+                  <Font name="Consolas Bold" size="11.0" />
+               </font>
+            </Button>
+            <Label fx:id="import_path" layoutX="117.0" layoutY="41.0" prefHeight="17.0" prefWidth="212.0" textFill="#5180a1">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Label>
+            <CheckBox fx:id="create_profile" layoutX="12.0" layoutY="70.0" mnemonicParsing="false" selected="true" text="Crear nuevo perfil" />
+            <Label layoutX="14.0" layoutY="104.0" text="Nombre" />
+            <Label layoutX="14.0" layoutY="136.0" text="Descripción" />
+            <TextArea fx:id="desc_import" layoutX="89.0" layoutY="136.0" prefHeight="76.0" prefWidth="226.0" />
+            <TextField fx:id="name_import" layoutX="90.0" layoutY="100.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
