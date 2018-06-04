@@ -3,6 +3,7 @@ package com.mrvansork.nnt.view;
 import com.mrvansork.nnt.MainApp;
 import com.mrvansork.nnt.model.Utilities;
 import com.mrvansork.nnt.model.perceptron.Perceptron;
+import com.mrvansork.nnt.model.perceptron.Settings;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -165,12 +166,13 @@ public class TrainOverviewController implements Initializable{
     private void onSave(){
         FileChooser chooser = new FileChooser();
         chooser.setTitle("Save perceptron");
-        File defaultDirectory = new File("C:");
+        File defaultDirectory = new File(Settings.get().LAST_SAVE_PATH);
         chooser.setInitialDirectory(defaultDirectory);
         chooser.setInitialFileName("newPerceptron.prc");
         File file = chooser.showSaveDialog(null);
         if(file != null){
             Utilities.saveObject(file.getPath(), perceptron);
+            Settings.get().LAST_SAVE_PATH = file.getParent();
         }
     }
 

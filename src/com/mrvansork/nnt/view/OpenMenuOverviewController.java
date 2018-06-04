@@ -3,6 +3,7 @@ package com.mrvansork.nnt.view;
 import com.mrvansork.nnt.MainApp;
 import com.mrvansork.nnt.model.Utilities;
 import com.mrvansork.nnt.model.perceptron.Perceptron;
+import com.mrvansork.nnt.model.perceptron.Settings;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -38,10 +39,11 @@ public class OpenMenuOverviewController implements Initializable {
     private void onExplore(){
         FileChooser chooser = new FileChooser();
         chooser.setTitle("Data file");
-        File defaultDirectory = new File("C:\\Dev\\Java\\AlgoritmoGenetico\\resources");
+        File defaultDirectory = new File(Settings.get().LAST_OPEN_PROFILE_PATH);
         chooser.setInitialDirectory(defaultDirectory);
         File file = chooser.showOpenDialog(null);
         if(file != null){
+            Settings.get().LAST_OPEN_PROFILE_PATH = file.getParent();
             perceptron = Utilities.loadPerceptron(file.getPath());
             check.setDisable(false);
             d_inputs = new double[perceptron.getNumOfInputs()];

@@ -2,6 +2,7 @@ package com.mrvansork.nnt.view;
 
 import com.mrvansork.nnt.MainApp;
 import com.mrvansork.nnt.model.Utilities;
+import com.mrvansork.nnt.model.perceptron.Settings;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -79,10 +80,11 @@ public class TrainMenuOverviewController implements Initializable {
     private void onExplore(){
         FileChooser chooser = new FileChooser();
         chooser.setTitle("Data file");
-        File defaultDirectory = new File("C:\\Dev\\Java\\AlgoritmoGenetico\\resources");
+        File defaultDirectory = new File(Settings.get().LAST_OPEN_DATA_PATH);
         chooser.setInitialDirectory(defaultDirectory);
         File file = chooser.showOpenDialog(null);
         if(file != null){
+            Settings.get().LAST_OPEN_DATA_PATH = file.getParent();
             file_path = file.getPath();
             file_name.setText(file.getName());
             preview.setText(Utilities.readFileToString(file));

@@ -6,6 +6,7 @@ import com.mrvansork.nnt.model.NeuralNetData;
 import static com.mrvansork.nnt.model.Constants.*;
 import static com.mrvansork.nnt.model.Utilities.loadObject;
 
+import com.mrvansork.nnt.model.perceptron.Settings;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -20,7 +21,6 @@ import javafx.stage.FileChooser;
 
 import java.io.File;
 import java.net.URL;
-import java.util.Date;
 import java.util.ResourceBundle;
 
 
@@ -100,12 +100,13 @@ public class MenuOverviewController implements Initializable {
         chooser.setTitle("Perceptron file");
         chooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Perceptron files (*.prc)", "*.prc"));
         chooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("All files", "*"));
-        File defaultDirectory = new File("C:\\Dev\\Java\\AlgoritmoGenetico\\resources");
+        File defaultDirectory = new File(Settings.get().LAST_IMPORT_PATH);
         chooser.setInitialDirectory(defaultDirectory);
         File file = chooser.showOpenDialog(null);
         if(file != null){
             import_path.setText(file.getName());
             DATA_TRAIN_PATH = file.getPath();
+            Settings.get().LAST_IMPORT_PATH = file.getParent();
         }
     }
 

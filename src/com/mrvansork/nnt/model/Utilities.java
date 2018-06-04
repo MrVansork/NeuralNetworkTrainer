@@ -1,6 +1,10 @@
 package com.mrvansork.nnt.model;
 
 import com.mrvansork.nnt.model.perceptron.Perceptron;
+import org.opencv.core.Mat;
+import org.opencv.core.Size;
+import org.opencv.imgcodecs.Imgcodecs;
+import org.opencv.imgproc.Imgproc;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -103,5 +107,20 @@ public class Utilities {
         return value * (max - min) + min;
     }
 
+    public static double[] getImageData(String path){
+        Mat img = Imgcodecs.imread(new File(path).getPath(), Imgcodecs.CV_LOAD_IMAGE_GRAYSCALE);
+        Imgproc.GaussianBlur(img, img, new Size(15, 15), 0);
+        Imgproc.Canny(img, img, 11, 11*3, 3, false);
+
+        double[] data = new double[img.rows()*img.cols()];
+        int c = 0;
+        for(int i = 0; i < img.cols(); i++){
+            for(int j = 0; j < img.rows(); j++){
+                data[c++] = normalize(img.get(j, i)[0], 0, 255);
+            }
+        }
+
+        return data;
+    }
 
 }
