@@ -1,4 +1,4 @@
-package com.mrvansork.nnt.model.perceptron;
+package com.mrvansork.nnt.model;
 
 import java.io.Serializable;
 

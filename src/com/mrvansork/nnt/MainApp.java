@@ -2,18 +2,15 @@ package com.mrvansork.nnt;
 
 import com.mrvansork.nnt.model.Constants;
 import com.mrvansork.nnt.model.Utilities;
-import com.mrvansork.nnt.model.perceptron.Settings;
+import com.mrvansork.nnt.model.Settings;
 import javafx.application.Application;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 import org.opencv.core.Core;
 
-import javax.rmi.CORBA.Util;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -39,12 +36,7 @@ public class MainApp extends Application{
             System.err.println("----\n");
         }
 
-        primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
-            @Override
-            public void handle(WindowEvent event) {
-                closeCheck();
-            }
-        });
+        primaryStage.setOnCloseRequest(event -> closeCheck());
 
         initOverviews();
     }
@@ -80,11 +72,11 @@ public class MainApp extends Application{
 
     static{System.loadLibrary(Core.NATIVE_LIBRARY_NAME);}
 
-    public static void closeCheck(){
+    private static void closeCheck(){
         Utilities.saveObject(Constants.APPDATA+"\\settings", Settings.get());
     }
 
-    public static void initialCheck() throws IOException {
+    private static void initialCheck() throws IOException {
         File profiles = new File(Constants.APPDATA+"\\profiles");
         if(!profiles.exists()){
             profiles.mkdirs();
@@ -96,8 +88,12 @@ public class MainApp extends Application{
             settings.createNewFile();
         }else{
             Settings.setSingleton((Settings) Utilities.loadObject(settings.getPath()));
+            try{
+                String nullptr = Settings.get().LAST_IMPORT_PATH;
+            }catch(NullPointerException e){
+                Settings.setSingleton(new Settings());
+            }
         }
-
     }
 
     public static void main(String[] args) {

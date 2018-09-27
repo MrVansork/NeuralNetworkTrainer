@@ -3,12 +3,11 @@ package com.mrvansork.nnt.view;
 import com.mrvansork.nnt.MainApp;
 import com.mrvansork.nnt.model.NeuralNetData;
 
-import static com.mrvansork.nnt.model.Constants.*;
+import static com.mrvansork.nnt.model.Constants.APPDATA;
+import static com.mrvansork.nnt.model.NeuralNetData.*;
 import static com.mrvansork.nnt.model.Utilities.loadObject;
 
-import com.mrvansork.nnt.model.perceptron.Settings;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import com.mrvansork.nnt.model.Settings;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.CheckBox;
@@ -25,8 +24,6 @@ import java.util.ResourceBundle;
 
 
 public class MenuOverviewController implements Initializable {
-
-    private ObservableList<NeuralNetData> nnds = FXCollections.observableArrayList();
 
     @FXML
     private VBox history;
@@ -50,12 +47,12 @@ public class MenuOverviewController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         File profiles = new File(APPDATA+"\\profiles");
         for(String s:profiles.list()){
-            nnds.add((NeuralNetData) loadObject(profiles.getPath()+s));
+            NNDS.add((NeuralNetData) loadObject(profiles.getPath()+s));
         }
 
         history.getChildren().removeAll(history.getChildren());
-        history.setPrefHeight(nnds.size()*96);
-        for(NeuralNetData nnd:nnds){
+        history.setPrefHeight(NNDS.size()*96);
+        for(NeuralNetData nnd:NNDS){
             history.getChildren().add(nnd.getPane());
         }
     }
@@ -109,5 +106,6 @@ public class MenuOverviewController implements Initializable {
             Settings.get().LAST_IMPORT_PATH = file.getParent();
         }
     }
+
 
 }

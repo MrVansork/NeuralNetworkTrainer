@@ -4,6 +4,8 @@ import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -17,6 +19,22 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class NeuralNetData implements Serializable{
+
+    public static ObservableList<NeuralNetData> NNDS = FXCollections.observableArrayList();
+
+    public static int INPUTS, OUTPUTS;
+    public static double MAX_INPUT, MAX_OUTPUT;
+    public static double MIN_INPUT, MIN_OUTPUT;
+    public static String DATA_TRAIN_PATH = "";
+    public static String NAME_NND = "";
+    public static String DESCRIPTION_NND = "";
+    public static String PERCEPTRON_PATH = "";
+
+    public static void serializeNnds(){
+        for(NeuralNetData nnd:NNDS){
+            Utilities.saveObject(Constants.APPDATA+"\\profiles\\"+nnd.getName().replaceAll(" ", "_")+".pfl", nnd);
+        }
+    }
 
     private final StringProperty name;
     private final StringProperty description;

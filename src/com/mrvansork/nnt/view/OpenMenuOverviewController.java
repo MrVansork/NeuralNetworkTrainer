@@ -3,7 +3,7 @@ package com.mrvansork.nnt.view;
 import com.mrvansork.nnt.MainApp;
 import com.mrvansork.nnt.model.Utilities;
 import com.mrvansork.nnt.model.perceptron.Perceptron;
-import com.mrvansork.nnt.model.perceptron.Settings;
+import com.mrvansork.nnt.model.Settings;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
